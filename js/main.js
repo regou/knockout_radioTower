@@ -60,9 +60,15 @@ var ulistModel = function(){
     self.del = function(d,evt){
         var li = self.li();
         console.log('li',li);
-        var index = li.findIndex(function(element, index, array){
-            return element.name == d.name;
-        });
+        var index = (function(){
+            var res = -1;
+            li.forEach(function(item,index){
+                if(item.name == d.name){res = index;}
+            });
+            return res;
+        })();
+
+
         console.log('index',index);
         var res = li.splice(index, 1);
         self.li(li);
