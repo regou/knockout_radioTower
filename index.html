@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+
+    </head>
+    <body id="root">
+
+    <form id="a">
+        Start:<input data-bind="value: startMonth" type="month"/>
+        End:<input data-bind="value: endMonth" type="month"/>
+
+        <p>
+            请观察结尾的“length”:<strong data-bind="text: sum"></strong>
+        </p>
+
+    </form>
+
+<div id="b">
+
+    <table data-bind="foreach: li">
+        <tr>
+            <td data-bind="text: name"></td>
+            <td data-bind="text: age"></td>
+            <td><button data-bind="click: $parent.del">del</button></td>
+        </tr>
+    </table>
+    </div>
+
+
+
+
+        <script src="js/vendor/knockout-3.2.0.debug.js"></script>
+
+        <script src="js/main.js"></script>
+
+
+    </body>
+</html>
